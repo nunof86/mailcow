@@ -11,9 +11,9 @@ mail.projeto.com
 
 ## Hosts Configuration
 
-1. Change the <mark style="color:red;">**IP**</mark> to the <mark style="color:red;">**IP**</mark> of your machine.
+1. Change the <mark style="color:red;">`your_ip_address`</mark> to your <mark style="color:red;">IP</mark>.
 
 ```bash
 sudo nano /etc/hosts
-192.168.117.134 mail.projeto.com mail
+your_ip_address mail.projeto.com mail
 ```

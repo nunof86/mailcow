@@ -5,6 +5,7 @@
 ### Mail Server
 
 1. Replace the <mark style="color:red;">`hosts:`</mark> option to <mark style="color:red;">**localhost**</mark> or other <mark style="color:red;">**host**</mark> of your choice.
+2. Change the <mark style="color:red;">`your_ip_address`</mark> to your <mark style="color:red;">IP</mark>.
 
 ```yaml
 - name: Install Mailcow Mail Server
@@ -78,7 +79,7 @@
     - name: Replace the /etc/hosts Configuration File
       become: yes
       copy:
-        content: '192.168.117.134 mail.projeto.com mail'
+        content: 'your_ip_address mail.projeto.com mail'
         dest: /etc/hosts
       diff: yes
       ignore_errors: yes
@@ -116,6 +117,7 @@
 ### DNS Master
 
 1. Replace the <mark style="color:red;">`hosts:`</mark> option to <mark style="color:red;">**localhost**</mark> or the <mark style="color:red;">**host**</mark> of your <mark style="color:red;">**DNS Master**</mark> machine.
+2. Change the <mark style="color:red;">`your_ip_address`</mark> to your <mark style="color:red;">IP</mark>.
 
 ```yaml
 - name: DNS Master Configuration
@@ -126,7 +128,7 @@
       blockinfile:
         path: /etc/bind/zones/projeto.com.zone
         content: |
-          mail    IN      A       192.168.117.133
+          mail    IN      A       your_ip_address
           @       IN      MX 10   mail.projeto.com.
           @       IN      TXT     "v=spf1 mx -all"
       register: dns_records_change
